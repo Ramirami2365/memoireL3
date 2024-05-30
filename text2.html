@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traite</title>
+    <div class="an">
+        <ul>
+           <li><a href="home.html">HOME</a></li>
+           <li><a href="test.html">Traiter</a></a></li>
+           <li><a href="about.html">ABOUT TALA</a></li>
+           <li><a href="inscription.html">INSCRIPTION</a></li>
+       
+        </ul>
+       </div>
+    
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .an{
+  display: flex;
+  background-image: linear-gradient(rgb(0, 183, 255),rgb(0, 26, 128));
+  height: 80px;
+  border-style: solid;
+}
+.an ul {
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-top: -10px;
+}
+.an ul li{
+  text-align: center;
+  display: inline-block;
+  width: 130px;
+  margin-top: 30px;
+  margin-left: 5px;
+  padding: 7px;
+  background-color: #fff;
+  border-radius: 12.5px;
+  transition: 0.4s ease;
+}
+.an ul li a{
+  font-family: Verdana;
+  color: rgb(0, 0, 0);
+  font-weight:  bold;
+  text-decoration: none;
+  
+}
+.an ul li a:hover{
+  color:white;
+}
+.an ul li:hover{
+  padding: 7px;
+  border-radius: 12.5px;
+  background: rgb(44, 190, 183);
+  color: rgb(255, 255, 255);
+}
+body{
+  background-image: url(image/img10.jpg);
+  background: cover;
+  background-repeat: no-repeat;
+  background-size:cover;
+}
+.par1 p{
+text-align: center;
+font-family: cursive;
+color: #000000;
+}
+.par1 h1{
+text-align: center;
+font-family: cursive;
+color: #000000;
+}
+button:hover {
+    background-color: #2388b8; /* Changement de couleur de fond au survol */
+}
+
+button:active {
+    background-color: #f0f0f0; /* Changement de couleur de fond au clic */
+}
+button {
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Ombre */
+    transition: box-shadow 0.3s ease; /* Transition douce */
+}
+button:hover {
+    cursor: pointer; /* Curseur en forme de main au survol */
+}
+button {
+    transition: transform 0.3s ease; /* Transition douce */
+}
+
+button:hover {
+    transform: scale(1.1); /* Agrandissement au survol */
+}
+button {
+    border: none; /* Suppression de la bordure par défaut */
+    border-radius: 90px; /* Arrondi des coins */
+    outline: none; /* Suppression du contour au clic */
+}
+button {
+    font-size: 15px; /* Augmenter la taille du texte */
+    padding: 12px 24px; /* Augmenter l'espace intérieur (padding) du bouton */
+}
+
+       </style>
+      <div class="par1">
+    <h1>الفصول الأربعة</h1>
+    <p>بفضل الفصول الأربعة تنقسم السنة إلى شهور والشهور إلى أيام، وهذا تبعا للمناخ السائد خلال كل فترة فيجعلها مميزة عن غيرها.
+
+        هناك أربعة فصول تتابع بشكل منتظم، وهي فصل الشتاء ثم فصل الربيع وبعده فصل الصيف وأخيرا فصل الخريف، ولكل واحد منها تأثير مباشر على حياة الكائنات الحية وأنشطتها.
+        
+        فهناك موسم للزراعة وآخر للحصاد، وهناك نباتات موسمية، كما أن الحيوانات تتخذ سلوكا مناسبا لكل فصل، مثلا السبات في الشتاء، والعمل الدؤوب في الصيف، والإنسان يحدد نوع عمله وفترة خروجه بما تقتضي المصلحة ويتلاءم مع الظروف الجوية، فيختار الملابس المناسبة والنشاط الملائم لكل فصل.
+        
+        وتكتسي الأرض والسماء خلال كل فصل حلة جديدة، فتلبس الأرض فستانا أبيضا شتاء، وتتزين ببساط مخضر مطرز بالألوان الزاهية ربيعا، وتتوشح السماء ألوانا زاهية بسواد الليل مع ظاهرة الشفق القطبي، وتكتسب زرقة صافية نهارا، تجعل العين تندهش والنفس تسبح بحمد الخالق.
+        
+        هذا الإختلاف بين الفصول نعمة عظيمة من الله تعالى أوجدها ليسير الكون بانتظام وينفع العباد بالخيرات والعطاء الجزيل .</p>
+     </div>
+    <button id="process-button">Traiter le fichier</button>
+    <div id="result"></div>
+
+    <script>
+        // Liste des prépositions à éliminer
+        var prepositions = ["من", "إلى", "عن", "على", "في", "ب", "ل", "ك", "و", "بين", "مع", "عند", "قبل", "بعد", "خلال", "حتى", "أو", "إلا", "لكن", "رغم", "إذا", "لو", "كي", "أن", "كأن", "لأن", "ليس", "ما", "ماذا", "هل", "منذ", "ذلك", "هذا", "هذه", "ذا", "ذي", "ذو", "الذي", "التي", "اللذان", "اللتان", "الذين", "اللاتي", "اللائي", "الذين", "اللائي", "اللائي", "اللائي", "اللائي", "اللائي", "اللائي", "اللائي", "اللائي", "اللائي", "اللائي", "اللائي", "اللائي"];
+        
+        // Variable pour stocker le seuil de fréquence minimale
+        var threshold = 2;
+        
+        // Fonction pour compter la fréquence des mots dans un texte
+        function countWords(text) {
+            // Supprimer les espaces et les signes de ponctuation
+            text = text.replace(/\s+/g, " ").replace(/[.,;:!?،؛؟]/g, ""); //g= globale 
+            // Séparer les mots par un espace
+            var words = text.split(" ");
+            // Créer un objet pour stocker les mots et leurs fréquences
+            var wordCounts = {};
+            // Parcourir les mots
+            for (var i = 0; i < words.length; i++) {
+                // Récupérer le mot courant
+                var word = words[i];
+                // Vérifier si le mot est une préposition ou est vide
+                if (prepositions.includes(word) || word.trim() === "") {
+                    // Ignorer le mot
+                   // continue;
+                }
+                // Vérifier si le mot existe déjà dans l'objet
+                else if (wordCounts.hasOwnProperty(word)) {
+                    // Augmenter sa fréquence
+                    wordCounts[word]++;
+                } else {
+                    // Ajouter le mot avec une fréquence initiale de 1
+                    wordCounts[word] = 1;
+                }
+            }
+            // Retourner l'objet
+            return wordCounts;
+        }
+        
+        // Fonction pour créer un tableau HTML à partir d'un objet de mots et de fréquences
+        function createTable(wordCounts) {
+            // Créer un élément table
+            var table = document.createElement("table");
+            // Créer un élément thead
+            var thead = document.createElement("thead");
+            // Créer un élément tr
+            var tr = document.createElement("tr");
+            // Créer un élément th pour le mot
+            var th1 = document.createElement("th");
+            // Ajouter le texte "Mot"
+            th1.textContent = "Mot";
+            // Ajouter le th au tr
+            tr.appendChild(th1);
+            // Créer un élément th pour la fréquence
+            var th2 = document.createElement("th");
+            // Ajouter le texte "Fréquence"
+            th2.textContent = "Fréquence";
+            // Ajouter le th au tr
+            tr.appendChild(th2);
+            // Ajouter le tr au thead
+            thead.appendChild(tr);
+            // Ajouter le thead à la table
+            table.appendChild(thead);
+            // Créer un élément tbody
+            var tbody = document.createElement("tbody");
+            // Parcourir les mots et leurs fréquences
+            for (var word in wordCounts) {
+                // Vérifier si la fréquence du mot est supérieure ou égale au seuil
+                if (wordCounts[word] >= threshold) {
+                    // Créer un élément tr
+                    var tr = document.createElement("tr");
+                    // Créer un élément td pour le mot
+                    var td1 = document.createElement("td");
+                    // Ajouter le mot
+                    td1.textContent = word;
+                    // Ajouter le td au tr
+                    tr.appendChild(td1);
+                    // Créer un élément td pour la fréquence
+                    var td2 = document.createElement("td");
+                    // Ajouter la fréquence
+                    td2.textContent = wordCounts[word];
+                    // Ajouter le td au tr
+                    tr.appendChild(td2);
+                    // Ajouter le tr au tbody
+                    // Ajouter le tr au tbody
+                    tbody.appendChild(tr);
+                }
+            }
+            // Ajouter le tbody à la table
+            table.appendChild(tbody);
+            // Retourner la table
+            return table;
+        }
+
+        // Ajouter un écouteur d'événement au bouton
+        var processButton = document.getElementById("process-button");
+        processButton.addEventListener("click", function() {
+            // Récupérer le contenu du texte
+            var text = document.querySelector("p").textContent;
+            // Compter les mots et leurs fréquences
+            var wordCounts = countWords(text);
+            // Créer un tableau HTML
+            var table = createTable(wordCounts);
+            // Vider le div
+            var resultDiv = document.getElementById("result");
+            resultDiv.innerHTML = "";
+            // Ajouter le tableau au div
+            resultDiv.appendChild(table);
+        });
+    </script>
+</body>
+</html>

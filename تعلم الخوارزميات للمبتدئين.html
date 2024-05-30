@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<!-- saved from url=(0053)https://harmash.com/tutorials/algorithms/introduction -->
+<html lang="ar" dir="rtl"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>تعلم الخوارزميات للمبتدئين</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="أول شيء يجب أن تعرفه هو أن الخوارزميات ليست لغة برمجة, إنما هي طرق التحليل و التفكير التي عليك اتباعها حتى تتمكن من كتابة الكود بشكل صحيح.">
+    <link rel="canonical" href="https://harmash.com/tutorials/algorithms/introduction">
+    <meta property="og:title" content="تعلم الخوارزميات للمبتدئين">
+    <meta property="og:site_name" content="موقع هرمش">
+    <meta property="og:locale" content="ar_SA">
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="أول شيء يجب أن تعرفه هو أن الخوارزميات ليست لغة برمجة, إنما هي طرق التحليل و التفكير التي عليك اتباعها حتى تتمكن من كتابة الكود بشكل صحيح.">
+    <meta property="og:image" content="https://harmash.com">
+    <meta property="og:image:url" content="https://harmash.com">
+    <meta property="twitter:image" content="https://harmash.com">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" type="image/x-icon" href="https://harmash.com/assets/images/harmash-x.PNG?v=Se9LompyOpqhhFHBbXmskmEcfaKPSkhEgWYtSPekMXg">
+
+    
+    <!-- web style -->
+    <link rel="stylesheet" href="./تعلم الخوارزميات للمبتدئين_files/site.min.css">
+
+            <link rel="stylesheet" href="./تعلم الخوارزميات للمبتدئين_files/page-content.min.css">
+            <link rel="stylesheet" href="./تعلم الخوارزميات للمبتدئين_files/lesson-page.min.css">
+
+
+    <!-- analytics -->
+    <script src="./تعلم الخوارزميات للمبتدئين_files/f(6).txt"></script><script src="./تعلم الخوارزميات للمبتدئين_files/f(7).txt"></script><script src="./تعلم الخوارزميات للمبتدئين_files/f(8).txt"></script><script async="" src="./تعلم الخوارزميات للمبتدئين_files/js"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-7LKHLZZYPK');
+    </script>
+<meta http-equiv="origin-trial" content="AlK2UR5SkAlj8jjdEc9p3F3xuFYlF6LYjAML3EOqw1g26eCwWPjdmecULvBH5MVPoqKYrOfPhYVL71xAXI1IBQoAAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3NTgwNjcxOTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="Amm8/NmvvQfhwCib6I7ZsmUxiSCfOxWxHayJwyU1r3gRIItzr7bNQid6O8ZYaE1GSQTa69WwhPC9flq/oYkRBwsAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3NTgwNjcxOTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="A/ERL66fN363FkXxgDc6F1+ucRUkAhjEca9W3la6xaLnD2Y1lABsqmdaJmPNaUKPKVBRpyMKEhXYl7rSvrQw+AkAAACNeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A6OdGH3fVf4eKRDbXb4thXA4InNqDJDRhZ8U533U/roYjp4Yau0T3YSuc63vmAs/8ga1cD0E3A7LEq6AXk1uXgsAAACTeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><script async="" src="./تعلم الخوارزميات للمبتدئين_files/ca-pub-1613148428630404"></script><script async="" src="./تعلم الخوارزميات للمبتدئين_files/AGSKWxUjhdcc70joDS-7Yzh7MfI_FrHiQWHZWQabIYEO5sZOYs9riNIoIFJtDuth76LOwTG7Zrco8g743t-j95aGKpGuH9X_TkVVEtJIza1APuCv8fDUA_BUqaXZ-MiwpoTKeSF4ow9D9g=="></script><script async="" src="./تعلم الخوارزميات للمبتدئين_files/AGSKWxUYq_5lErRKtMayQAmo2M5DLYKdOwQZNvzT7XClbRrlYI3Xk0nedaVehVW9oH24cuDm1cjGDC764dN5ed85nTVwlii1nmoEPh2XCz1sE67sohQpT_4vm0VmLcxix90WxQ94dwQPjQ=="></script><meta http-equiv="origin-trial" content="AlK2UR5SkAlj8jjdEc9p3F3xuFYlF6LYjAML3EOqw1g26eCwWPjdmecULvBH5MVPoqKYrOfPhYVL71xAXI1IBQoAAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3NTgwNjcxOTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="Amm8/NmvvQfhwCib6I7ZsmUxiSCfOxWxHayJwyU1r3gRIItzr7bNQid6O8ZYaE1GSQTa69WwhPC9flq/oYkRBwsAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3NTgwNjcxOTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="A/ERL66fN363FkXxgDc6F1+ucRUkAhjEca9W3la6xaLnD2Y1lABsqmdaJmPNaUKPKVBRpyMKEhXYl7rSvrQw+AkAAACNeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A6OdGH3fVf4eKRDbXb4thXA4InNqDJDRhZ8U533U/roYjp4Yau0T3YSuc63vmAs/8ga1cD0E3A7LEq6AXk1uXgsAAACTeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><script async="" src="./تعلم الخوارزميات للمبتدئين_files/AGSKWxXHQ_BjlQNILzkEbuRbAlsltfHWST1MHrDpPqqL69F2H00SqCk7rCbOtCbnkbyx1AA9Zj_0Wl4B9Ti8t6LUFPzusKU54V6Wyqb3kmmsc-p-S12oLBZYUn6_mueLqvIFyiUt36fmdQ=="></script></head>
+<body aria-hidden="false" style="">
+    <div id="header">
+        <div class="header-content">
+            <div class="menu-bar">
+                    <div class="menu" menu="sidenav">
+                        <span>
+                            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill="white" d="M4 7a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2H5a1 1 0 0 1-1-1zm0 5a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2H5a1 1 0 0 1-1-1zm0 5a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2H5a1 1 0 0 1-1-1z"></path>
+                            </svg>
+                        </span>
+                    </div>
+                <div class="home">
+                    <a aria-label="الرئيسية" href="https://harmash.com/" class="">
+                        <svg height="20" viewBox="0 0 512 512" width="20" xmlns="http://www.w3.org/2000/svg">
+                            <path fill="white" d="m261.56 101.28a8 8 0 0 0 -11.06 0l-184.1 175.87a8 8 0 0 0 -2.47 5.79l-.03 165.06a32 32 0 0 0 32 32h96.1a16 16 0 0 0 16-16v-136a8 8 0 0 1 8-8h80a8 8 0 0 1 8 8v136a16 16 0 0 0 16 16h96.06a32 32 0 0 0 32-32v-165.06a8 8 0 0 0 -2.47-5.79z"></path>
+                            <path fill="white" d="m490.91 244.15-74.8-71.56v-108.59a16 16 0 0 0 -16-16h-48a16 16 0 0 0 -16 16v32l-57.92-55.38c-5.42-5.48-13.48-8.62-22.19-8.62-8.68 0-16.72 3.14-22.14 8.63l-212.7 203.5c-6.22 6-7 15.87-1.34 22.37a16 16 0 0 0 23.18 1.06l207.5-198.28a8 8 0 0 1 11.06 0l207.52 198.28a16 16 0 0 0 22.59-.44c6.14-6.36 5.63-16.86-.76-22.97z"></path>
+                        </svg>
+                    </a>
+                </div>
+                <div class="search" menu="search_box">
+                    <span>
+                        <svg height="18" width="18" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                            <path fill="white" d="m505 442.7-99.7-99.7c-4.5-4.5-10.6-7-17-7h-16.3c27.6-35.3 44-79.7 44-128 0-114.9-93.1-208-208-208s-208 93.1-208 208 93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zm-297-106.7c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"></path>
+                        </svg>
+                    </span>
+                </div>
+
+                <span class="spacer desktop-only"></span>
+
+                <div class="tutorials desktop-only top-nav-active-section" menu="tutorials_box">دورات <span class="carret">▾</span></div>
+                <div class="posts desktop-only">
+                    <a href="https://harmash.com/posts" class="">مقالات</a>
+                </div>
+                <div class="projects desktop-only">
+                    <a href="https://harmash.com/projects" class="">مشاريع</a>
+                </div>
+                <div class="questions desktop-only">
+                    <a href="https://harmash.com/questions" class="">أسئلة</a>
+                </div>
+                <div class="books desktop-only">
+                    <a href="https://harmash.com/books" class="">كتب</a>
+                </div>
+
+                <span class="spacer desktop-only"></span>
+                
+                <div class="sections mobile-only" menu="sections_box">
+                    <span>
+                        <svg width="18" height="18" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                            <path fill="white" d="m434.66 167.71-90.16-90.35a31.83 31.83 0 0 0 -45-.07l-.07.07-75.43 75.52v271.12l210.66-211.1a32 32 0 0 0 0-45.19zm45.34 152.29h-106.91l-186.41 186.51c-2.06 2.07-4.5 3.58-6.68 5.49h300a32 32 0 0 0 32-32v-128a32 32 0 0 0 -32-32zm-288-288a32 32 0 0 0 -32-32h-128a32 32 0 0 0 -32 32v384a96 96 0 0 0 192 0zm-96 408a24 24 0 1 1 24-24 24 24 0 0 1 -24 24zm32-184h-64v-64h64zm0-128h-64v-64h64z"></path>
+                        </svg>
+                    </span>
+                </div>
+                <div class="mode">
+                    <span class="dark-mode" style="display: inline-block;">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-moon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="#0ff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z"></path>
+                        </svg>
+                    </span>
+                    <span class="light-mode" style="display: none;">
+                        <svg height="24" preserveAspectRatio="xMinYMin" viewBox="-2 -2 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                            <path fill="yellow" d="m10 13a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 2a5 5 0 1 1 0-10 5 5 0 0 1 0 10zm0-15a1 1 0 0 1 1 1v2a1 1 0 0 1 -2 0v-2a1 1 0 0 1 1-1zm0 16a1 1 0 0 1 1 1v2a1 1 0 0 1 -2 0v-2a1 1 0 0 1 1-1zm-9-7h2a1 1 0 1 1 0 2h-2a1 1 0 0 1 0-2zm16 0h2a1 1 0 0 1 0 2h-2a1 1 0 0 1 0-2zm.071-6.071a1 1 0 0 1 0 1.414l-1.414 1.414a1 1 0 1 1 -1.414-1.414l1.414-1.414a1 1 0 0 1 1.414 0zm-11.314 11.314a1 1 0 0 1 0 1.414l-1.414 1.413a1 1 0 1 1 -1.414-1.414l1.414-1.414a1 1 0 0 1 1.414 0zm-1.414-11.314 1.414 1.414a1 1 0 0 1 -1.414 1.414l-1.413-1.414a1 1 0 0 1 1.413-1.413zm11.314 11.314 1.414 1.414a1 1 0 0 1 -1.414 1.414l-1.414-1.414a1 1 0 1 1 1.414-1.414z"></path>
+                        </svg>
+                    </span>
+                </div>
+                <div class="account-menu" menu="topnav_user_dropdown">
+                        <a aria-label="تسجيل الدخول" href="https://harmash.com/account/login" class="">
+                            <svg width="24" height="24" viewBox="0 0 496 512" xmlns="http://www.w3.org/2000/svg">
+                                <path fill="#fff" d="m248 8c-137 0-248 111-248 248s111 248 248 248 248-111 248-248-111-248-248-248zm0 96c48.6 0 88 39.4 88 88s-39.4 88-88 88-88-39.4-88-88 39.4-88 88-88zm0 344c-58.7 0-111.3-26.6-146.5-68.2 18.8-35.4 55.6-59.8 98.5-59.8 2.4 0 4.8.4 7.1 1.1 13 4.2 26.6 6.9 40.9 6.9s28-2.7 40.9-6.9c2.3-.7 4.7-1.1 7.1-1.1 42.9 0 79.7 24.4 98.5 59.8-35.2 41.6-87.8 68.2-146.5 68.2z"></path>
+                            </svg>
+                        </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="topnavSlider">
+        <div id="topnavSlider_scroll_left_btn">
+            <span class="topnavSlider-btn" onmousedown="topnavSlider_scrollTo(-1)" onmouseup="topnavSlider_stopScrollTo()" onmouseout="topnavSlider_stopScrollTo()">❮</span>
+        </div>
+        <div id="topnavSlider_content" onmousedown="topnavSlider_startScrolling(event)" onmousemove="topnavSlider_scrolling(event)" onmouseup="topnavSlider_endScrolling(event)" onclick="return topnavSlider_shouldOpenLink(event)">
+            <a href="https://harmash.com/tutorials/programming">Programming Basics</a>
+            <a href="https://harmash.com/tutorials/sql">SQL</a>
+            <a href="https://harmash.com/tutorials/html">HTML</a>
+            <a href="https://harmash.com/tutorials/css">CSS</a>
+            <a href="https://harmash.com/tutorials/javascript">JavaScript</a>
+            <a href="https://harmash.com/tutorials/python">Python</a>
+            <a href="https://harmash.com/tutorials/cplusplus">C++</a>
+            <a href="https://harmash.com/tutorials/java">Java</a>
+            <a href="https://harmash.com/tutorials/javafx">JavaFX</a>
+            <a href="https://harmash.com/tutorials/swing">Swing</a>
+            <a href="https://harmash.com/tutorials/algorithms-and-data-structure">Problem Solving</a>
+            <a href="https://harmash.com/tutorials/english">English</a>
+            <a href="https://harmash.com/tutorials/english-conversations">English Conversations</a>
+            <a href="https://harmash.com/tutorials/computer-fundamentals">Computer Fundamentals</a>
+            <a href="https://harmash.com/learn-typing">Learn Typing</a>
+            <div href="javascript:void(0)" style="display:inline-block; width:40px;visibility:hidden;"></div>
+        </div>
+        <div id="topnavSlider_btn_container">
+            <div id="topnavSlider_scroll_right_btn">
+                <span class="topnavSlider-btn" onmousedown="topnavSlider_scrollTo(1)" onmouseup="topnavSlider_stopScrollTo()" onmouseout="topnavSlider_stopScrollTo()">❯</span>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="container">
+        
+<div class="empty-bg">
+
+    <div class="lesson-page">
+
+        <div id="sidenav" class="sticky-menu">
+            <ul class="tutorial-menu">
+                        <li class="title">دروس تمهيدية</li>
+                        <li>
+                            <span class="check-mark" onclick="toggleLessonCheck(1831)">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="18" width="18" viewBox="0 0 512 512">
+                                    <path opacity="1" d="M504 256c0 137-111 248-248 248S8 393 8 256 119 8 256 8s248 111 248 248zM227.3 387.3l184-184c6.2-6.2 6.2-16.4 0-22.6l-22.6-22.6c-6.2-6.2-16.4-6.2-22.6 0L216 308.1l-70.1-70.1c-6.2-6.2-16.4-6.2-22.6 0l-22.6 22.6c-6.2 6.2-6.2 16.4 0 22.6l104 104c6.2 6.2 16.4 6.2 22.6 0z"></path>
+                                </svg>
+                            </span>
+                            <a id="1831" href="https://harmash.com/tutorials/algorithms/introduction" class="active">مفهوم الخوارزميات</a>
+                        </li>
+                        <li>
+                            <span class="check-mark" onclick="toggleLessonCheck(1843)">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="18" width="18" viewBox="0 0 512 512">
+                                    <path opacity="1" d="M504 256c0 137-111 248-248 248S8 393 8 256 119 8 256 8s248 111 248 248zM227.3 387.3l184-184c6.2-6.2 6.2-16.4 0-22.6l-22.6-22.6c-6.2-6.2-16.4-6.2-22.6 0L216 308.1l-70.1-70.1c-6.2-6.2-16.4-6.2-22.6 0l-22.6 22.6c-6.2 6.2-6.2 16.4 0 22.6l104 104c6.2 6.2 16.4 6.2 22.6 0z"></path>
+                                </svg>
+                            </span>
+                            <a id="1843" href="https://harmash.com/tutorials/algorithms/environment-setup" class="">تجهيز بيئة العمل</a>
+                        </li>
+                        <li>
+                            <span class="check-mark" onclick="toggleLessonCheck(1852)">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="18" width="18" viewBox="0 0 512 512">
+                                    <path opacity="1" d="M504 256c0 137-111 248-248 248S8 393 8 256 119 8 256 8s248 111 248 248zM227.3 387.3l184-184c6.2-6.2 6.2-16.4 0-22.6l-22.6-22.6c-6.2-6.2-16.4-6.2-22.6 0L216 308.1l-70.1-70.1c-6.2-6.2-16.4-6.2-22.6 0l-22.6 22.6c-6.2 6.2-6.2 16.4 0 22.6l104 104c6.2 6.2 16.4 6.2 22.6 0z"></path>
+                                </svg>
+                            </span>
+                            <a id="1852" href="https://harmash.com/tutorials/algorithms/the-print-method" class="">دالة الطباعة Print</a>
+                        </li>
+                        <li>
+                            <span class="check-mark" onclick="toggleLessonCheck(1859)">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="18" width="18" viewBox="0 0 512 512">
+                                    <path opacity="1" d="M504 256c0 137-111 248-248 248S8 393 8 256 119 8 256 8s248 111 248 248zM227.3 387.3l184-184c6.2-6.2 6.2-16.4 0-22.6l-22.6-22.6c-6.2-6.2-16.4-6.2-22.6 0L216 308.1l-70.1-70.1c-6.2-6.2-16.4-6.2-22.6 0l-22.6 22.6c-6.2 6.2-6.2 16.4 0 22.6l104 104c6.2 6.2 16.4 6.2 22.6 0z"></path>
+                                </svg>
+                            </span>
+                            <a id="1859" href="https://harmash.com/tutorials/algorithms/concatenation" class="">الدمج أثناء الطباعة</a>
+                        </li>
+                        <li>
+                            <span class="check-mark" onclick="toggleLessonCheck(1870)">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="18" width="18" viewBox="0 0 512 512">
+                                    <path opacity="1" d="M504 256c0 137-111 248-248 248S8 393 8 256 119 8 256 8s248 111 248 248zM227.3 387.3l184-184c6.2-6.2 6.2-16.4 0-22.6l-22.6-22.6c-6.2-6.2-16.4-6.2-22.6 0L216 308.1l-70.1-70.1c-6.2-6.2-16.4-6.2-22.6 0l-22.6 22.6c-6.2 6.2-6.2 16.4 0 22.6l104 104c6.2 6.2 16.4 6.2 22.6 0z"></path>
+                                </svg>
+                            </span>
+                            <a id="1870" href="https://harmash.com/tutorials/algorithms/variables" class="">المتغيرات</a>
+                        </li>
+                        <li class="title">الحلقات و الشروط</li>
+                        <li>
+                            <span class="check-mark" onclick="toggleLessonCheck(1889)">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="18" width="18" viewBox="0 0 512 512">
+                                    <path opacity="1" d="M504 256c0 137-111 248-248 248S8 393 8 256 119 8 256 8s248 111 248 248zM227.3 387.3l184-184c6.2-6.2 6.2-16.4 0-22.6l-22.6-22.6c-6.2-6.2-16.4-6.2-22.6 0L216 308.1l-70.1-70.1c-6.2-6.2-16.4-6.2-22.6 0l-22.6 22.6c-6.2 6.2-6.2 16.4 0 22.6l104 104c6.2 6.2 16.4 6.2 22.6 0z"></path>
+                                </svg>
+                            </span>
+                            <a id="1889" href="https://harmash.com/tutorials/algorithms/loops" class="">الحلقات و أنواعها</a>
+                        </li>
+                        <li>
+                            <span class="check-mark" onclick="toggleLessonCheck(1891)">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="18" width="18" viewBox="0 0 512 512">
+                                    <path opacity="1" d="M504 256c0 137-111 248-248 248S8 393 8 256 119 8 256 8s248 111 248 248zM227.3 387.3l184-184c6.2-6.2 6.2-16.4 0-22.6l-22.6-22.6c-6.2-6.2-16.4-6.2-22.6 0L216 308.1l-70.1-70.1c-6.2-6.2-16.4-6.2-22.6 0l-22.6 22.6c-6.2 6.2-6.2 16.4 0 22.6l104 104c6.2 6.2 16.4 6.2 22.6 0z"></path>
+                                </svg>
+                            </span>
+                            <a id="1891" href="https://harmash.com/tutorials/algorithms/for-loop" class="">الحلقة For</a>
+                        </li>
+                        <li>
+                            <span class="check-mark" onclick="toggleLessonCheck(1898)">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="18" width="18" viewBox="0 0 512 512">
+                                    <path opacity="1" d="M504 256c0 137-111 248-248 248S8 393 8 256 119 8 256 8s248 111 248 248zM227.3 387.3l184-184c6.2-6.2 6.2-16.4 0-22.6l-22.6-22.6c-6.2-6.2-16.4-6.2-22.6 0L216 308.1l-70.1-70.1c-6.2-6.2-16.4-6.2-22.6 0l-22.6 22.6c-6.2 6.2-6.2 16.4 0 22.6l104 104c6.2 6.2 16.4 6.2 22.6 0z"></path>
+                                </svg>
+                            </span>
+                            <a id="1898" href="https://harmash.com/tutorials/algorithms/while-and-do-while-loops" class="">الحلقتين While و Do While</a>
+                        </li>
+                        <li>
+                            <span class="check-mark" onclick="toggleLessonCheck(1910)">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="18" width="18" viewBox="0 0 512 512">
+                                    <path opacity="1" d="M504 256c0 137-111 248-248 248S8 393 8 256 119 8 256 8s248 111 248 248zM227.3 387.3l184-184c6.2-6.2 6.2-16.4 0-22.6l-22.6-22.6c-6.2-6.2-16.4-6.2-22.6 0L216 308.1l-70.1-70.1c-6.2-6.2-16.4-6.2-22.6 0l-22.6 22.6c-6.2 6.2-6.2 16.4 0 22.6l104 104c6.2 6.2 16.4 6.2 22.6 0z"></path>
+                                </svg>
+                            </span>
+                            <a id="1910" href="https://harmash.com/tutorials/algorithms/setting-conditions" class="">جمل الشرط</a>
+                        </li>
+                        <li>
+                            <span class="check-mark" onclick="toggleLessonCheck(1911)">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="18" width="18" viewBox="0 0 512 512">
+                                    <path opacity="1" d="M504 256c0 137-111 248-248 248S8 393 8 256 119 8 256 8s248 111 248 248zM227.3 387.3l184-184c6.2-6.2 6.2-16.4 0-22.6l-22.6-22.6c-6.2-6.2-16.4-6.2-22.6 0L216 308.1l-70.1-70.1c-6.2-6.2-16.4-6.2-22.6 0l-22.6 22.6c-6.2 6.2-6.2 16.4 0 22.6l104 104c6.2 6.2 16.4 6.2 22.6 0z"></path>
+                                </svg>
+                            </span>
+                            <a id="1911" href="https://harmash.com/tutorials/algorithms/operators" class="">العوامل</a>
+                        </li>
+                        <li>
+                            <span class="check-mark" onclick="toggleLessonCheck(1935)">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="18" width="18" viewBox="0 0 512 512">
+                                    <path opacity="1" d="M504 256c0 137-111 248-248 248S8 393 8 256 119 8 256 8s248 111 248 248zM227.3 387.3l184-184c6.2-6.2 6.2-16.4 0-22.6l-22.6-22.6c-6.2-6.2-16.4-6.2-22.6 0L216 308.1l-70.1-70.1c-6.2-6.2-16.4-6.2-22.6 0l-22.6 22.6c-6.2 6.2-6.2 16.4 0 22.6l104 104c6.2 6.2 16.4 6.2 22.6 0z"></path>
+                                </svg>
+                            </span>
+                            <a id="1935" href="https://harmash.com/tutorials/algorithms/nested-loops" class="">الحلقات المتداخلة</a>
+                        </li>
+                        <li class="title">إدخال بيانات من المستخدم</li>
+                        <li>
+                            <span class="check-mark" onclick="toggleLessonCheck(1946)">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="18" width="18" viewBox="0 0 512 512">
+                                    <path opacity="1" d="M504 256c0 137-111 248-248 248S8 393 8 256 119 8 256 8s248 111 248 248zM227.3 387.3l184-184c6.2-6.2 6.2-16.4 0-22.6l-22.6-22.6c-6.2-6.2-16.4-6.2-22.6 0L216 308.1l-70.1-70.1c-6.2-6.2-16.4-6.2-22.6 0l-22.6 22.6c-6.2 6.2-6.2 16.4 0 22.6l104 104c6.2 6.2 16.4 6.2 22.6 0z"></path>
+                                </svg>
+                            </span>
+                            <a id="1946" href="https://harmash.com/tutorials/algorithms/the-read-method" class="">دالة الإدخال Read</a>
+                        </li>
+                        <li>
+                            <span class="check-mark" onclick="toggleLessonCheck(1953)">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="18" width="18" viewBox="0 0 512 512">
+                                    <path opacity="1" d="M504 256c0 137-111 248-248 248S8 393 8 256 119 8 256 8s248 111 248 248zM227.3 387.3l184-184c6.2-6.2 6.2-16.4 0-22.6l-22.6-22.6c-6.2-6.2-16.4-6.2-22.6 0L216 308.1l-70.1-70.1c-6.2-6.2-16.4-6.2-22.6 0l-22.6 22.6c-6.2 6.2-6.2 16.4 0 22.6l104 104c6.2 6.2 16.4 6.2 22.6 0z"></path>
+                                </svg>
+                            </span>
+                            <a id="1953" href="https://harmash.com/tutorials/algorithms/calculate-the-factorial" class="">حساب قيمة الـ Factorial للعدد</a>
+                        </li>
+                        <li>
+                            <span class="check-mark" onclick="toggleLessonCheck(1963)">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="18" width="18" viewBox="0 0 512 512">
+                                    <path opacity="1" d="M504 256c0 137-111 248-248 248S8 393 8 256 119 8 256 8s248 111 248 248zM227.3 387.3l184-184c6.2-6.2 6.2-16.4 0-22.6l-22.6-22.6c-6.2-6.2-16.4-6.2-22.6 0L216 308.1l-70.1-70.1c-6.2-6.2-16.4-6.2-22.6 0l-22.6 22.6c-6.2 6.2-6.2 16.4 0 22.6l104 104c6.2 6.2 16.4 6.2 22.6 0z"></path>
+                                </svg>
+                            </span>
+                            <a id="1963" href="https://harmash.com/tutorials/algorithms/calculate-the-power" class="">حساب قيمة المضاعف للعدد</a>
+                        </li>
+                        <li class="title">المصفوفات</li>
+                        <li>
+                            <span class="check-mark" onclick="toggleLessonCheck(1974)">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="18" width="18" viewBox="0 0 512 512">
+                                    <path opacity="1" d="M504 256c0 137-111 248-248 248S8 393 8 256 119 8 256 8s248 111 248 248zM227.3 387.3l184-184c6.2-6.2 6.2-16.4 0-22.6l-22.6-22.6c-6.2-6.2-16.4-6.2-22.6 0L216 308.1l-70.1-70.1c-6.2-6.2-16.4-6.2-22.6 0l-22.6 22.6c-6.2 6.2-6.2 16.4 0 22.6l104 104c6.2 6.2 16.4 6.2 22.6 0z"></path>
+                                </svg>
+                            </span>
+                            <a id="1974" href="https://harmash.com/tutorials/algorithms/arrays-types" class="">المصفوفات و أنواعها</a>
+                        </li>
+                        <li>
+                            <span class="check-mark" onclick="toggleLessonCheck(1976)">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="18" width="18" viewBox="0 0 512 512">
+                                    <path opacity="1" d="M504 256c0 137-111 248-248 248S8 393 8 256 119 8 256 8s248 111 248 248zM227.3 387.3l184-184c6.2-6.2 6.2-16.4 0-22.6l-22.6-22.6c-6.2-6.2-16.4-6.2-22.6 0L216 308.1l-70.1-70.1c-6.2-6.2-16.4-6.2-22.6 0l-22.6 22.6c-6.2 6.2-6.2 16.4 0 22.6l104 104c6.2 6.2 16.4 6.2 22.6 0z"></path>
+                                </svg>
+                            </span>
+                            <a id="1976" href="https://harmash.com/tutorials/algorithms/one-dimensional-arrays" class="">تعريف مصفوفة ذات بعد واحد</a>
+                        </li>
+                        <li>
+                            <span class="check-mark" onclick="toggleLessonCheck(1980)">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="18" width="18" viewBox="0 0 512 512">
+                                    <path opacity="1" d="M504 256c0 137-111 248-248 248S8 393 8 256 119 8 256 8s248 111 248 248zM227.3 387.3l184-184c6.2-6.2 6.2-16.4 0-22.6l-22.6-22.6c-6.2-6.2-16.4-6.2-22.6 0L216 308.1l-70.1-70.1c-6.2-6.2-16.4-6.2-22.6 0l-22.6 22.6c-6.2 6.2-6.2 16.4 0 22.6l104 104c6.2 6.2 16.4 6.2 22.6 0z"></path>
+                                </svg>
+                            </span>
+                            <a id="1980" href="https://harmash.com/tutorials/algorithms/one-dimensional-arrays-length" class="">حجم المصفوفة ذات البعد الواحد</a>
+                        </li>
+                        <li>
+                            <span class="check-mark" onclick="toggleLessonCheck(1983)">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="18" width="18" viewBox="0 0 512 512">
+                                    <path opacity="1" d="M504 256c0 137-111 248-248 248S8 393 8 256 119 8 256 8s248 111 248 248zM227.3 387.3l184-184c6.2-6.2 6.2-16.4 0-22.6l-22.6-22.6c-6.2-6.2-16.4-6.2-22.6 0L216 308.1l-70.1-70.1c-6.2-6.2-16.4-6.2-22.6 0l-22.6 22.6c-6.2 6.2-6.2 16.4 0 22.6l104 104c6.2 6.2 16.4 6.2 22.6 0z"></path>
+                                </svg>
+                            </span>
+                            <a id="1983" href="https://harmash.com/tutorials/algorithms/working-with-one-dimensional-arrays" class="">التعامل مع مصفوفة ذات بعد واحد</a>
+                        </li>
+                        <li>
+                            <span class="check-mark" onclick="toggleLessonCheck(2005)">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="18" width="18" viewBox="0 0 512 512">
+                                    <path opacity="1" d="M504 256c0 137-111 248-248 248S8 393 8 256 119 8 256 8s248 111 248 248zM227.3 387.3l184-184c6.2-6.2 6.2-16.4 0-22.6l-22.6-22.6c-6.2-6.2-16.4-6.2-22.6 0L216 308.1l-70.1-70.1c-6.2-6.2-16.4-6.2-22.6 0l-22.6 22.6c-6.2 6.2-6.2 16.4 0 22.6l104 104c6.2 6.2 16.4 6.2 22.6 0z"></path>
+                                </svg>
+                            </span>
+                            <a id="2005" href="https://harmash.com/tutorials/algorithms/two-dimensional-arrays" class="">تعريف مصفوفة ذات بعدين</a>
+                        </li>
+                        <li>
+                            <span class="check-mark" onclick="toggleLessonCheck(2007)">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="18" width="18" viewBox="0 0 512 512">
+                                    <path opacity="1" d="M504 256c0 137-111 248-248 248S8 393 8 256 119 8 256 8s248 111 248 248zM227.3 387.3l184-184c6.2-6.2 6.2-16.4 0-22.6l-22.6-22.6c-6.2-6.2-16.4-6.2-22.6 0L216 308.1l-70.1-70.1c-6.2-6.2-16.4-6.2-22.6 0l-22.6 22.6c-6.2 6.2-6.2 16.4 0 22.6l104 104c6.2 6.2 16.4 6.2 22.6 0z"></path>
+                                </svg>
+                            </span>
+                            <a id="2007" href="https://harmash.com/tutorials/algorithms/two-dimensional-arrays-length" class="">حجم المصفوفة ذات البعدين</a>
+                        </li>
+                        <li>
+                            <span class="check-mark" onclick="toggleLessonCheck(2011)">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="18" width="18" viewBox="0 0 512 512">
+                                    <path opacity="1" d="M504 256c0 137-111 248-248 248S8 393 8 256 119 8 256 8s248 111 248 248zM227.3 387.3l184-184c6.2-6.2 6.2-16.4 0-22.6l-22.6-22.6c-6.2-6.2-16.4-6.2-22.6 0L216 308.1l-70.1-70.1c-6.2-6.2-16.4-6.2-22.6 0l-22.6 22.6c-6.2 6.2-6.2 16.4 0 22.6l104 104c6.2 6.2 16.4 6.2 22.6 0z"></path>
+                                </svg>
+                            </span>
+                            <a id="2011" href="https://harmash.com/tutorials/algorithms/working-with-two-dimensional-arrays" class="">التعامل مع مصفوفة ذات بعدين</a>
+                        </li>
+                        <li class="title">الدوال</li>
+                        <li>
+                            <span class="check-mark" onclick="toggleLessonCheck(2063)">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="18" width="18" viewBox="0 0 512 512">
+                                    <path opacity="1" d="M504 256c0 137-111 248-248 248S8 393 8 256 119 8 256 8s248 111 248 248zM227.3 387.3l184-184c6.2-6.2 6.2-16.4 0-22.6l-22.6-22.6c-6.2-6.2-16.4-6.2-22.6 0L216 308.1l-70.1-70.1c-6.2-6.2-16.4-6.2-22.6 0l-22.6 22.6c-6.2 6.2-6.2 16.4 0 22.6l104 104c6.2 6.2 16.4 6.2 22.6 0z"></path>
+                                </svg>
+                            </span>
+                            <a id="2063" href="https://harmash.com/tutorials/algorithms/methods" class="">تعريف دوال جديدة</a>
+                        </li>
+                        <li>
+                            <span class="check-mark" onclick="toggleLessonCheck(2068)">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="18" width="18" viewBox="0 0 512 512">
+                                    <path opacity="1" d="M504 256c0 137-111 248-248 248S8 393 8 256 119 8 256 8s248 111 248 248zM227.3 387.3l184-184c6.2-6.2 6.2-16.4 0-22.6l-22.6-22.6c-6.2-6.2-16.4-6.2-22.6 0L216 308.1l-70.1-70.1c-6.2-6.2-16.4-6.2-22.6 0l-22.6 22.6c-6.2 6.2-6.2 16.4 0 22.6l104 104c6.2 6.2 16.4 6.2 22.6 0z"></path>
+                                </svg>
+                            </span>
+                            <a id="2068" href="https://harmash.com/tutorials/algorithms/parameters" class="">التعامل مع الباراميترات</a>
+                        </li>
+                        <li>
+                            <span class="check-mark" onclick="toggleLessonCheck(2082)">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="18" width="18" viewBox="0 0 512 512">
+                                    <path opacity="1" d="M504 256c0 137-111 248-248 248S8 393 8 256 119 8 256 8s248 111 248 248zM227.3 387.3l184-184c6.2-6.2 6.2-16.4 0-22.6l-22.6-22.6c-6.2-6.2-16.4-6.2-22.6 0L216 308.1l-70.1-70.1c-6.2-6.2-16.4-6.2-22.6 0l-22.6 22.6c-6.2 6.2-6.2 16.4 0 22.6l104 104c6.2 6.2 16.4 6.2 22.6 0z"></path>
+                                </svg>
+                            </span>
+                            <a id="2082" href="https://harmash.com/tutorials/algorithms/recursion" class="">تعريف دوال تستدعي نفسها</a>
+                        </li>
+                        <li class="title">أكتب الكود كالمحترفين</li>
+                        <li>
+                            <span class="check-mark" onclick="toggleLessonCheck(2091)">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="18" width="18" viewBox="0 0 512 512">
+                                    <path opacity="1" d="M504 256c0 137-111 248-248 248S8 393 8 256 119 8 256 8s248 111 248 248zM227.3 387.3l184-184c6.2-6.2 6.2-16.4 0-22.6l-22.6-22.6c-6.2-6.2-16.4-6.2-22.6 0L216 308.1l-70.1-70.1c-6.2-6.2-16.4-6.2-22.6 0l-22.6 22.6c-6.2 6.2-6.2 16.4 0 22.6l104 104c6.2 6.2 16.4 6.2 22.6 0z"></path>
+                                </svg>
+                            </span>
+                            <a id="2091" href="https://harmash.com/tutorials/algorithms/write-less-code" class="">تقليص حجم الكود</a>
+                        </li>
+
+
+
+            </ul>
+        </div>
+
+        <div id="content">
+
+            <input name="__RequestVerificationToken" type="hidden" value="CfDJ8J9EWDcWSERLjPFFZSoDLNPPHReA8hJPHuTZ4ASUVoVPgQF0bu2s42hIqIK9z7wemUQpwzlqDJpu6biBWViVn30a8OpkfLbOPXMPNT1ilJplydw0E4fHOefc7KysE0V_BDLQy5oQAex8JK6aeNo5FDM">
+            <input type="hidden" id="isUserSignedIn" value="False">
+            <input type="hidden" id="pageId" value="1831">
+            <input type="hidden" id="tutorialId" value="3">
+            <input type="hidden" id="totalLessons" value="25">
+            <input type="hidden" id="hasProgress">
+            <input type="hidden" id="lessonIds">
+            <input type="hidden" id="isDone">
+            <input type="hidden" id="username">
+
+
+            <div class="google-ad top"><ins class="adsbygoogle" data-ad-client="ca-pub-1613148428630404" data-ad-slot="5975336166" style="display: inline-block; width: 728px; height: 90px;" data-adsbygoogle-status="done" data-ad-status="filled"><div id="aswift_1_host" style="border: none; height: 90px; width: 728px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block;"><iframe id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;border:0;width:728px;height:90px;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="728" height="90" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" src="./تعلم الخوارزميات للمبتدئين_files/ads.html" data-google-container-id="a!2" tabindex="0" title="Advertisement" aria-label="Advertisement" data-google-query-id="CP3r_f7goIYDFUt-pAQdbjsBLA" data-load-complete="true"></iframe></div></ins></div>
+
+            <div class="next-and-previous-lessons">
+                <a class="next-page" href="https://harmash.com/tutorials/algorithms/environment-setup">
+                    <span class="next-page-text">الدرس التالي</span><span class="cursor">❯</span>
+                </a>
+                <a class="previous-page" href="https://harmash.com/">
+                    <span class="cursor">❮</span><span class="previous-page-text">الرئيسية</span>
+                </a>
+            </div>
+
+            <div class="page-content">
+                <h1><span class="tutorial">الخوارزميات</span>تعلم الخوارزميات للمبتدئين</h1><div id="shortcuts" style="display: block;"><ul><li>مفهوم الخوارزميات</li><li>أريد تعلم الخوارزميات و لكنني لا أريد تعلم لغة جافا</li><li>نصائح و إرشادات للمبرمج الجديد الذي يطمح للإحتراف</li><li>الطريقة المعتمدة في التعلم</li><li>الطريقة الصحيحة للتعلم و التي تنمي قدراتك التحليلية</li></ul></div><article>
+    <h2>مفهوم الخوارزميات</h2>
+	<p class="question">ما هي الخوارزميات و لم يجب أن تتعلمها قبل أن تتعلم أي لغة برمجة؟</p>
+	<p>الخوارزميات تسمى <span class="word">Algorithms</span> باللغة الإنجليزية.<br>
+    أول شيء يجب أن تعرفه هو أن الخوارزميات ليست لغة برمجة, إنما هي طرق التحليل و التفكير التي عليك اتباعها حتى تتمكن من كتابة الكود بشكل صحيح.</p>
+	<br>
+    <p class="question">ما هي المشكلة التي يتعرض لها الجميع و تصبح سبب خوفهم من البرمجة؟</p>
+    <p>أغلب ألأشخاص الذين يحاولون أن يتعلموا البرمجة تراهم يذهبون مباشرةً في الإتجاه الخاطئ, فهم يبدؤون مباشرةً بدراسة لغة برمجة معينة مثل <span class="inline">(<span class="word">Java, C, C++</span>)</span> دون أن يتعلموا مبادئ البرمجة الأساسية, و دون أن يقوموا بوضع الأفكار الأساسية للبرنامج ثم تحليلها و تأديتها واحدة تلو الأخرى.</p>
+    <p>الخوارزميات هي الجزء الأصعب في البرمجة و عندما تتعلمها بشكل صحيح فهذا يعني أنك قادر أن تتعلم أي لغة برمجة تريدها لأنه في الواقع إذا لم تعرف كيف تتعامل مع الكود و تعالج جميع المشاكل التي تواجهك أثناء كتابة الكود فإنك ستستسلم و تتوقف في مكانك عند أول مشكلة تافهة تظهر لك في الكود و تكون بذلك قد أضعت وقتك لأنك لا تعرف كيف يجب أن تحل المشكلة التي تتعامل معها, إذاً عندما تنتهي من تحليل برنامجك يمكنك كتابته بأي لغة برمجة تريدها بكل سهولة.</p>
+	<p>في الحقيقة إذا فهمت الخوارزميات حقاً ستجد نفسك قادر على فهم أي لغة برمجة تريد لأنك قادر على التحكم و التلاعب بالكود بالطريقة التي تريدها. كما سنعطيك معلومة صغيرة لعلها تكون دافعاً لك لتتعلم و هي أن الهاكر هو إنسان عادي جداً, ما يتميز به أنه يمتلك قدرة عالية من التحليل و التركيز, أي بكل بساطة يفهم الخوارزميات بشكل ممتاز, لذلك يعرف كيف يحتال على البرامج, المواقع, أنظمة الحماية إلخ..</p>
+	<p>و لعل أروع ما في الخوارزميات هو أنك إذا فهمتها حقاً فلن يصعب عليك فهم أي شيء في عالم البرمجة لأنه في البداية هو الأصعب فقط إذا لم تجد من يعلمك إياها بالطريقة الصحيحة و السهلة.</p>
+	<br>
+	<p class="question">كيف سأتعلم الخوارزميات؟</p>
+	<p>في كل درس ستتعلم مفاهيم جديدة و ستجد تمارين شاملة في نهاية كل درس أيضاً.<br>
+	ننصحك و بشدة قراءة الشروحات بهدوء و تركيز تام و مشاهدة جميع الأمثلة و الفيديوهات المرفقة في بعض الدروس.<br>
+	<span class="note">ملاحظة:</span> سنستخدم لغة جافا للتطبيق العملي و لتجربة الكود مع العلم أنه بإمكانك تطبيق ما ستتعلمه على أي لغة برمجة أخرى.</p>
+	<br>
+	<p class="question">ماذا أفعل إن لم أستطع فهم إحدى الشروحات؟</p>
+	<p>بكل بساطة تواصل معنا على أحد حساباتنا في <a href="https://twitter.com/harmashcom">تويتر</a>, أو <a href="https://www.facebook.com/harmashcom">فيسبوك</a> لشرح الفكرة التي عجزت عن فهمها بطريقة أخرى.</p>
+</article>
+<article>
+    <h2>أريد تعلم الخوارزميات و لكنني لا أريد تعلم لغة جافا</h2>
+	<p>هذا أكثر سؤال كان يصلنا لأن أي شخص يدخل للدورة يقرأ أننا سنطبق الشرح على الحاسوب بلغة جافا فيظن أننا سنعلمه لغة جافا بحد ذاتها, أو أننا سنعلمه خوارزميات خاصة فقط بلغة جافا. في كلا الحالتين هذا أمر خاطئ تماماً لأن ما تتعلمه في هذه الدورة يطبق معك على أي لغة برمجة تريد تعلمها في المستقبل.</p>
+	<p>إذاَ في هذه الدورة أنت لن تتعلم لغة جافا, بل ستتعلم جزء بسيط جداً منها لا يتجاوز 1% مما شرحناه فيها في دورات جافا حيث أننا سنشرح لك فقط ما تحتاجه منها حتى تتمكن من تجربة الكود على الكمبيوتر.</p>
+	<p>لتصدق ما قلناه لك الآن,  يمكنك إلقاء نظرة سريعة على دورة <a href="https://harmash.com/tutorials/algorithms-and-data-structure">تمارين خوارزميات و هياكل البيانات</a> التي قمنا فيها بوضع تمارين خوارزميات و معها الحل بخمس لغات برمجية هي بايثون, جافا, <span class="inline"><span class="word">C</span>,</span> <span class="word">C++</span> و <span class="inline"><span class="word">#C</span>.</span> من فضلك إطلع عليها فقط, لا تبدأ بها الآن لأنك غير مستعد لمستوى التحديات البرمجية الموضوعة فيها.</p>
+	<p><b>ملاحظة:</b> أسلوب الشرح الموضوع في الدورة معد بدقة عالية و كل شهر يدرس منها آلاف الطلاب و الهواة و الذين يشاركوننا تجاربهم في مواقع التواصل الإجتماعي.</p>
+</article>
+<article>
+    <h2>نصائح و إرشادات للمبرمج الجديد الذي يطمح للإحتراف</h2>
+	<br>
+	<h3>أولاً</h3>
+    <p>يجب أن يكون لديك ميول نحو عالم المعلوماتية بشكل عام و تعرف كيف تستخدم الكمبيوتر و يستحسن أن تمتلك كمبيوتر خاص بك لتجربة ما تشاء دون أي قلق.</p>
+	<br>
+	<h3>ثانياً</h3>
+    <p>أي مشكلة تواجهك في الكمبيوتر حاول أن تحلها بنفسك أولاً, أي إبحث في <a href="https://www.google.com/">google</a> و حاول بنفسك قبل أن تلجأ إلى سؤال أي أحد لأن هذا ما يفعله المحترفون و ذلك ما جعلهم محترفين.</p>
+	<br>
+	<h3>ثالثاً</h3>
+    <p>محاولتك الدائمة في إصلاحك للكمبيوتر تكسبك خبرة و ثقة عظيمة في قدراتك لأنك ستجد لاحقاً أنك إذا نويت على فعل أي شيئ, لن يستطيع أحد أن يقف في طريقك.</p>
+	<br>
+	<h3>رابعاً</h3>
+    <p>المعرفة باللغة الإنجليزية أساسية في عالم البرمجة لأنك ستجد كل ما تريد تعلمه موجود في كتب باللغة الإنجليزية و هي مجانية و أكثر من رائعة و أي سؤال تطرحه باللغة الإنجليزية ستجد جوابه و تحل جميع مشاكلك.</p>
+	<br>
+	<h3>خامساً</h3>
+	<p>عندما تقرأ أي شيء بأي لغة كان مكتوب و لا تفهمه, يمكنك إستخدام <a href="https://translate.google.com/">مترجم جوجل</a> المجاني لمعرفة معناها.</p>
+	<br>
+	<h3>سادساً</h3>
+    <p>إياك أن تعتقد أن المبرمج يجب أن يكون من خريجي الجامعات و المعاهد حتى أنني تعلمت البرمجة قبل أن أدخل إلى الجامعة, حتى الآن لم أكمل دراستي في الجامعة و لكن كل ما سأدرسه عندما أكمل سيكون تافهاً بالنسبة لي لأنني سبق و درسته و قضيت أشهراً في ذلك.</p>
+	<br>
+	<h3>سابعاً</h3>
+    <p>عند دراسة أي لغة برمجة من كتاب, إبحث دائماً عن آخر إصدار للغة البرمجة التي تريد دراستها و آخر إصدار موجود للكتاب و إبحث عن الكتب الكبيرة التي قد يصل حجمها إلى أكثر من ١٠٠٠ صفحة, لأن هذه الكتب تكون مشروحة بأسلوب مبسط سهل الفهم و غنية بأمثلة مشروحة بشكل مفصل, و إليك أهم موقع لتحميل كتب البرمجة الجديدة المجانية باللغة الإنجليزية <a href="https://itbook.store/books/free">itbook.store/books/free</a> و <a href="https://goalkicker.com/">goalkicker.com</a> و يمكنك تحميل كتب من موقع <a href="https://harmash.com/books">هرمش</a> و هذا موقع عربي أيضاً <a href="http://www.kutub.info/library">kutub.info</a>.<br>
+	ننصحك دائماً بالكتب الأجنبية لأنه لا يوجد أي مؤلف عربي قام بإنشاء كتاب شامل حقاً أو أعاد النظر في الكود الذي كتبه منذ عدة سنوات, أي لن تجد في كتابه كل تقنيات الكود الجديدة التي ستجدها في الإصدارات الجديدة في الكتب الأجنبية لأن الكتب الأجنبية يقوم بكتابتها العديد من المبرمجين, و ليس مبرمج أو اثنين كما في حالتنا و هذا الذي يجعل كتبنا ضعيفة أو قديمة بعض الشيء.</p>
+	<br>
+	<h3>ثامناً</h3>
+    <p>أكثر الوظائف المتوفرة عالمياً هي وظائف المبرمجين و أعلى رواتب هي رواتب المبرمجين التي تصل إلى أرقام خيالية في بعض الأحيان و هذا من أكثر الأسباب التي يمكن أن تكون دافعاً لك على التعلم لأنك قد تعيش حياةً رغيدة بفضل البرمجة.</p>
+    <ul>
+		<li>أغنى رجل في العالم هو <span class="word">Bill Gates</span> , و هو <span class="b">مبرمج</span> و مؤسس شركة <span class="word">microsoft</span>.</li>
+	    <li>أغنى شاب في العالم هو <span class="word">Mark Zuckerberg</span> , و هو <span class="b">مبرمج</span> و مؤسس موقع <span class="word">facebook</span>.</li>
+	</ul>
+</article>
+<article>
+    <h2>الطريقة المعتمدة في التعلم</h2>
+	<p>الأسلوب الذي ستتعلم فيه الخوارزميات معنا هو نفس الأسلوب المعتمد من قبل المعاهد و الجامعات.</p><br>
+	
+	<div class="alert-info">
+		<p>الهدف إعطاءك فكرة عامة للأسلوب المتبع في الشرح, لا داعي لأن تفهم الكود المكتوب الآن لأنك ستفهمه في الدروس اللاحقة.</p>
+	</div>
+	<br>
+	<h3>مثال</h3>
+	<p>نقول لك على سبيل المثال: أكتب برنامج يطبع جملة <span class="enlighter"><span class="enlighter-s0">"Hello World"</span></span> عندما تقوم بتشغيله.</p>
+	<p>بعدها ستجد النتيجة التي نريد الحصول عليها عند تشغيل البرنامج.</p>
+	<div class="example-box">
+	    <h4>نتيجة التشغيل</h4>
+	    <div class="image-box">
+    	    <img src="./تعلم الخوارزميات للمبتدئين_files/c385885c-2b52-4a8a-beae-23d4fa434635_pic_1.PNG">
+    	</div>
+    </div>
+	<p>ثم ستجد الكود كخوارزمية و الذي يجب أن تكتبه على الورقة.</p>
+    <div class="example-box">
+	    <h4>الخوارزمية</h4>
+	    <div class="image-box">
+    	    <img src="./تعلم الخوارزميات للمبتدئين_files/f8c4f1c0-2355-4d26-9644-2b4011af25c6_introduction-to-algorithm.PNG" alt="مقدمة حول الخوارزميات">
+    	</div>
+    </div>
+	<p>ثم كود الجافا و الذي تستطيع نسخه و تجربته مباشرةً على الكمبيوتر.</p>
+	<div class="example-box">
+	    <h4>كود الجافا</h4>
+		<div class="enlighter-wrapper"><span class="copy-code" id="copy_code_0"></span><div class="enlighter-default enlighter-v-standard enlighter-t-enlighter enlighter-hover enlighter-overflow-scroll"><div class="enlighter" style="" id="code_box_0"><div class=""><div><span class="enlighter-k0">public</span><span class="enlighter-text"> </span><span class="enlighter-k0">class</span><span class="enlighter-text"> MyAlgorithm </span><span class="enlighter-g1">{</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text"> </span></div></div><div class=""><div><span class="enlighter-text">    </span><span class="enlighter-k0">public</span><span class="enlighter-text"> </span><span class="enlighter-k0">static</span><span class="enlighter-text"> </span><span class="enlighter-k5">void</span><span class="enlighter-text"> </span><span class="enlighter-m0">main</span><span class="enlighter-text"> </span><span class="enlighter-g1">(</span><span class="enlighter-k5">String</span><span class="enlighter-g1">[]</span><span class="enlighter-text"> args</span><span class="enlighter-g1">)</span><span class="enlighter-text"> </span><span class="enlighter-g1">{</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">          System.</span><span class="enlighter-m3">out</span><span class="enlighter-text">.</span><span class="enlighter-m3">print</span><span class="enlighter-g1">(</span><span class="enlighter-s0">"Hello world"</span><span class="enlighter-g1">)</span><span class="enlighter-text">;</span></div></div><div class=""><div><span class="enlighter-text">    </span><span class="enlighter-g1">}</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text"> </span></div></div><div class=""><div><span class="enlighter-text"></span><span class="enlighter-g1">}</span></div></div></div><div class="enlighter-raw">public class MyAlgorithm {
+ 
+    public static void main (String[] args) {
+          System.out.print("Hello world");
+    }
+ 
+}</div></div></div>
+    </div>
+	<p>ثم شرح كل جزء في كود الجافا بشكل مفصل, لكننا لن نقوم بشرح هذا الكود الآن لأننا سنشرحه في الدرس القادم.</p>
+</article>
+<article>
+    <h2>الطريقة الصحيحة للتعلم و التي تنمي قدراتك التحليلية</h2>
+	<p>عند تعلم الخوارزميات عليك توفير دفتر لكتابة الخوارزميات عليه لأنه كما سبق و قلنا أنك تحلل برنامجك فقط عند كتابة الخوارزمية.<br>
+	بعد الإنتهاء من تحليل برنامجك على الورقة أكتبه على الكمبيوتر لتتأكد إذا كان تحليلك صحيحاً أي أن برنامجك يعمل بشكل سليم, أم أنه يجب تعديل الكود.</p>
+	<p>التحليل على الورقة سيساعدك كثيراً في التعلم و هذا أصلاً ما يقوم به المحترفون نفسهم قبل المباشرة بكتابة الكود.<br>
+	لذلك ننصحك دائماً بأن تعيد كل كود تعلمته عدة مرات و حاول دائماً ان تتلاعب بالكود و تجربه لأن ذلك سيجعلك تفهم جيداً فائدة كل سطر من الكود و ينمي لك قدراتك على التحليل بشكل كبير و سريع.</p>
+</article>
+            </div>
+
+                <div class="alert-info">
+                    <p>نرجو منك الإنتقال لدورة البرمجة للمبتدئين الجديدة التي أنشأنها كبديل أفضل لهذه الدورة ففي تلك الدورة قمنا بتبسيط الشرح أكثر و جعلناك قادر على تجربة الكود بشكل مباشر في موقعنا.</p>
+<br>
+<p><a class="btn btn-primary" href="https://harmash.com/tutorials/programming">دورة تعلم البرمجة للمبتدئين &gt;</a></p>
+                </div>
+            <div class="next-and-previous-lessons">
+                <a class="next-page" href="https://harmash.com/tutorials/algorithms/environment-setup">
+                    <span class="next-page-text">الدرس التالي</span><span class="cursor">❯</span>
+                </a>
+                <a class="previous-page" href="https://harmash.com/">
+                    <span class="cursor">❮</span><span class="previous-page-text">الرئيسية</span>
+                </a>
+            </div>
+
+            <div class="bottom-ads">
+                <div class="google-ad"><ins class="adsbygoogle" data-ad-client="ca-pub-1613148428630404" data-ad-slot="5975336166" style="display: inline-block; width: 336px; height: 280px;" data-adsbygoogle-status="done"><div id="aswift_2_host" style="border: none; height: 280px; width: 336px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block;"></div></ins></div>
+                <div class="google-ad"><ins class="adsbygoogle" data-ad-client="ca-pub-1613148428630404" data-ad-slot="5975336166" style="display: inline-block; width: 336px; height: 280px;" data-adsbygoogle-status="done"><div id="aswift_3_host" style="border: none; height: 280px; width: 336px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block;"></div></ins></div>
+            </div>
+        </div>
+
+        <div id="sideAds">
+            <div class="google-ad"><ins class="adsbygoogle" data-ad-client="ca-pub-1613148428630404" data-ad-slot="5975336166" style="display: inline-block; width: 120px; height: 0px;" data-adsbygoogle-status="done" data-ad-status="unfilled"><div id="aswift_4_host" style="border: none; height: 0px; width: 120px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block; overflow: hidden; opacity: 0;"><iframe id="aswift_4" name="aswift_4" style="left: 0px; position: absolute; top: 0px; border: 0px; width: 120px; height: 0px;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="120" height="0" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" src="./تعلم الخوارزميات للمبتدئين_files/ads(1).html" data-google-container-id="a!5" tabindex="0" title="Advertisement" aria-label="Advertisement" data-load-complete="true" data-google-query-id="CMP1gf_goIYDFcahJwIdFQoLng"></iframe></div></ins></div>
+        </div>
+    </div>
+</div>
+
+
+    </div>
+
+    <div id="footer">
+
+        <div class="center-box">
+            <div id="back_to_top"></div>
+            <div id="site_bio">
+                <div class="harmash-logo">
+                    <img width="150" height="150" loading="lazy" src="./تعلم الخوارزميات للمبتدئين_files/harmash-logo.PNG" aria-label="شعار موقع هرمش">
+                </div>
+                <div class="about">
+                    <h3>هدف الموقع</h3>
+                    <p>هرمش هو موقع تعليمي مجاني يهتم بعلوم الكمبيوتر و يقدم إليك المعرفة بشكل مبسّط و مفصّل، و هو المكان المناسب لأي شخص يطمح بأن يصبح مبرمجاً محترفاً و مبدعاً في العالم الرقمي.</p>
+                    <div class="web-links">
+                        <a target="_blank" href="https://twitter.com/harmashcom" aria-label="حساب الموقع في تويتر">
+                            <svg height="18" width="18" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                                <path fill="#fff" d="m31.937 6.093c-1.177.516-2.437.871-3.765 1.032 1.355-.813 2.391-2.099 2.885-3.631-1.271.74-2.677 1.276-4.172 1.579-1.192-1.276-2.896-2.079-4.787-2.079-3.625 0-6.563 2.937-6.563 6.557 0 .521.063 1.021.172 1.495-5.453-.255-10.287-2.875-13.52-6.833-.568.964-.891 2.084-.891 3.303 0 2.281 1.161 4.281 2.916 5.457-1.073-.031-2.083-.328-2.968-.817v.079c0 3.181 2.26 5.833 5.26 6.437-.547.145-1.131.229-1.724.229-.421 0-.823-.041-1.224-.115.844 2.604 3.26 4.5 6.14 4.557-2.239 1.755-5.077 2.801-8.135 2.801-.521 0-1.041-.025-1.563-.088 2.917 1.86 6.36 2.948 10.079 2.948 12.067 0 18.661-9.995 18.661-18.651 0-.276 0-.557-.021-.839 1.287-.917 2.401-2.079 3.281-3.396z"></path>
+                            </svg>
+                        </a>
+                        <a target="_blank" href="https://www.facebook.com/harmashcom" aria-label="حساب الموقع في فيسبوك">
+                            <svg height="20" width="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="m0 0h24v24h-24z" fill="#fff" opacity="0" transform="matrix(-1 0 0 -1 24 24)"></path>
+                                <path fill="#fff" d="m17 3.5a.5.5 0 0 0 -.5-.5h-2.5a4.77 4.77 0 0 0 -5 4.5v2.7h-2.5a.5.5 0 0 0 -.5.5v2.6a.5.5 0 0 0 .5.5h2.5v6.7a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-6.7h2.62a.5.5 0 0 0 .49-.37l.72-2.6a.5.5 0 0 0 -.48-.63h-3.35v-2.7a1 1 0 0 1 1-.9h2.5a.5.5 0 0 0 .5-.5z"></path>
+                            </svg>
+                        </a>
+                        <a target="_blank" href="http://www.youtube.com/channel/UCoKizUSSJw6Ymu2cpdPtUpA" aria-label="حساب الموقع في يوتيوب">
+                            <svg height="20" width="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <g>
+                                    <path fill="none" d="M0 0h24v24H0z"></path>
+                                    <path fill="#fff" d="M21.543 6.498C22 8.28 22 12 22 12s0 3.72-.457 5.502c-.254.985-.997 1.76-1.938 2.022C17.896 20 12 20 12 20s-5.893 0-7.605-.476c-.945-.266-1.687-1.04-1.938-2.022C2 15.72 2 12 2 12s0-3.72.457-5.502c.254-.985.997-1.76 1.938-2.022C6.107 4 12 4 12 4s5.896 0 7.605.476c.945.266 1.687 1.04 1.938 2.022zM10 15.5l6-3.5-6-3.5v7z"></path>
+                                </g>
+                            </svg>
+                        </a>
+                        <a target="_blank" href="https://telegram.me/harmashcom" aria-label="حساب الموقع في تيليقرام">
+                            <svg height="20" width="20" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                                <path fill="#fff" d="m29.919 6.163-4.225 19.925c-.319 1.406-1.15 1.756-2.331 1.094l-6.438-4.744-3.106 2.988c-.344.344-.631.631-1.294.631l.463-6.556 11.931-10.781c.519-.462-.113-.719-.806-.256l-14.75 9.288-6.35-1.988c-1.381-.431-1.406-1.381.288-2.044l24.837-9.569c1.15-.431 2.156.256 1.781 2.013z"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="important-links">
+                <h3>روابط مهمة</h3>
+                <div>
+                    <div>
+                        <a href="https://harmash.com/about">حول الموقع</a>
+                    </div>
+                    <div>
+                        <a href="https://harmash.com/faq">الأسئلة الشائعة</a>
+                    </div>
+                    <div>
+                        <a href="https://harmash.com/privacy-policy">سياسية الخصوصية</a>
+                    </div>
+                    <div>
+                        <a href="https://harmash.com/terms-of-use">شروط الإستخدام</a>
+                    </div>
+                    <div>
+                        <a href="https://harmash.com/account/report?v=638519712823015601">أبلغ عن مشكلة</a>
+                    </div>
+                    <div>
+                        <a href="https://freeskillacademy.com/" target="_blank">هرمش بالإنجليزية</a>
+                    </div>
+                    <div>
+                        <a href="https://harmash.com/support-us">تبرع للموقع ❤️</a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyrights-section">
+                <h3>حقوق النشر</h3>
+                <p>جميع الحقوق محفوظة لموقع هرمش. لا يسمح باستخدام الشروحات لأغراض تجارية، إجراء تعديل عليها، نشرها في موقع آخر، وضع الشروحات في تطبيق أو في كتاب إلا في حال أخذ موافقة صريحة من إدارة الموقع كما أن المحتوى مسجل بواسطة DMCA و في حال قيامك بمخالفة حقوق النشر سنضطر آسفين لاتخاذ الإجراءات اللازمة.</p>
+                <p style="margin-top: 14px"><a href="https://www.dmca.com/Protection/Status.aspx?ID=f9112b68-054a-45ee-abf9-9acfad8b5420" title="DMCA.com Protection Status" class="dmca-badge"> <img width="150" height="30" src="./تعلم الخوارزميات للمبتدئين_files/dmca-badge-w150-5x1-07.png" alt="DMCA.com Protection Status" loading="lazy"></a></p>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div id="tutorials_box" class="sticky-menu">
+        <div>
+            <h3>
+                الدورات
+                <svg style="float:left;" closemenu="tutorials" height="40" viewBox="0 0 16 16" width="40" xmlns="http://www.w3.org/2000/svg">
+                    <path fill="#fff4a3" d="m9.459 8.025 2.15 2.227a1.032 1.032 0 1 1 -1.485 1.433l-2.15-2.226-2.226 2.15a1.032 1.032 0 1 1 -1.433-1.485l2.226-2.15-2.15-2.226a1.032 1.032 0 1 1 1.485-1.433l2.15 2.226 2.226-2.15a1.032 1.032 0 1 1 1.433 1.485l-2.226 2.15z" fill-rule="evenodd"></path>
+                </svg>
+            </h3>
+            <div class="flex-container">
+                <div><a href="https://harmash.com/tutorials/programming"><div>أساسيات البرمجة</div></a></div>
+                <div><a href="https://harmash.com/tutorials/sql"><div>قواعد البيانات</div></a></div>
+                <div><a href="https://harmash.com/tutorials/html"><div>لغة HTML</div></a></div>
+                <div><a href="https://harmash.com/tutorials/css"><div>لغة CSS</div></a></div>
+                <div><a href="https://harmash.com/tutorials/javascript"><div>لغة JavaScript</div></a></div>
+                <div><a href="https://harmash.com/tutorials/python"><div>لغة Python</div></a></div>
+                <div><a href="https://harmash.com/tutorials/cplusplus"><div>لغة ++C</div></a></div>
+                <div><a href="https://harmash.com/tutorials/java"><div>لغة Java</div></a></div>
+                <div><a href="https://harmash.com/tutorials/javafx"><div>الإطار JavaFX</div></a></div>
+                <div><a href="https://harmash.com/tutorials/swing"><div>الإطار Swing</div></a></div>
+                <div><a href="https://harmash.com/tutorials/computer-fundamentals"><div>أساسيات الحاسوب</div></a></div>
+                <div><a href="https://harmash.com/tutorials/english"><div>اللغة الإنجليزية</div></a></div>
+                <div><a href="https://harmash.com/tutorials/english-conversations"><div>التحدث بالإنجليزية</div></a></div>
+                <div><a href="https://harmash.com/tutorials/algorithms-and-data-structure"><div>تحديات برمجية</div></a></div>
+                <div><a href="https://harmash.com/learn-typing"><div>الكتابة على الكيبورد</div></a></div>
+            </div>
+            <h3>أدوات مساعدة</h3>
+            <div class="flex-container">
+                <div><a href="https://harmash.com/typing-test"><div>إختبر سرعتك في الكتابة</div></a></div>
+                <div><a href="https://harmash.com/algo-editor"><div>محرر أساسيات البرمجة</div></a></div>
+                <div><a href="https://harmash.com/tryit"><div>محرر الويب</div></a></div>
+                <div><a href="https://harmash.com/color-picker"><div>أداة إختيار الألوان</div></a></div>
+                <div><a href="https://harmash.com/css-clip-path-maker"><div>أداة رسم الأشكال بواسطة CSS</div></a></div>
+                <div><a href="https://harmash.com/units-converter"><div>محول الوحدات</div></a></div>
+                <div><a href="https://harmash.com/ip-analyzer"><div>محلل عناوين الشبكات</div></a></div>
+                <div><a href="https://harmash.com/svg-to-code"><div>تحويل SVG إلى XML</div></a></div>
+                <div><a href="https://harmash.com/quran"><div>القرآن الكريم و الأذكار</div></a></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="sections_box" class="sticky-menu">
+        <div>
+            <h3>
+                أقسام الموقع
+                <svg style="float:left;" closemenu="sections" height="40" viewBox="0 0 16 16" width="40" xmlns="http://www.w3.org/2000/svg">
+                    <path fill="#fff4a3" d="m9.459 8.025 2.15 2.227a1.032 1.032 0 1 1 -1.485 1.433l-2.15-2.226-2.226 2.15a1.032 1.032 0 1 1 -1.433-1.485l2.226-2.15-2.15-2.226a1.032 1.032 0 1 1 1.485-1.433l2.15 2.226 2.226-2.15a1.032 1.032 0 1 1 1.433 1.485l-2.226 2.15z" fill-rule="evenodd"></path>
+                </svg>
+            </h3>
+            <span id="tutorials-btn" class="top-nav-active-section" onclick="toggleMobileSubTutorials(this);">
+                <svg width="18" height="18" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                    <path fill="white" d="m352 96c0-53.02-42.98-96-96-96s-96 42.98-96 96 42.98 96 96 96 96-42.98 96-96zm-118.41 145.1c-59.33-36.32-155.43-46.3-203.79-49.05-16.25-.92-29.8 11.46-29.8 27.09v222.8c0 14.33 11.59 26.28 26.49 27.05 43.66 2.29 131.99 10.68 193.04 41.43 9.37 4.72 20.48-1.71 20.48-11.87v-245.99c-.01-4.67-2.32-8.95-6.42-11.46zm248.61-49.05c-48.35 2.74-144.46 12.73-203.78 49.05-4.1 2.51-6.41 6.96-6.41 11.63v245.79c0 10.19 11.14 16.63 20.54 11.9 61.04-30.72 149.32-39.11 192.97-41.4 14.9-.78 26.49-12.73 26.49-27.06v-222.82c-.01-15.63-13.56-28.01-29.81-27.09z"></path>
+                </svg> دورات
+                <svg class="close-tutorials" width="20" height="20" style="left:9px; right: unset;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="m0 0h24v24h-24z" fill="#fff" opacity="0"></path>
+                    <path d="m12 15.5a1 1 0 0 1 -.71-.29l-4-4a1 1 0 1 1 1.42-1.42l3.29 3.31 3.3-3.18a1 1 0 1 1 1.38 1.44l-4 3.86a1 1 0 0 1 -.68.28z" fill="#fff"></path>
+                </svg>
+            </span>
+            <div id="sub_tutorials"><div>
+            <h3>
+                الدورات
+                <svg style="float:left;" closemenu="tutorials" height="40" viewBox="0 0 16 16" width="40" xmlns="http://www.w3.org/2000/svg">
+                    <path fill="#fff4a3" d="m9.459 8.025 2.15 2.227a1.032 1.032 0 1 1 -1.485 1.433l-2.15-2.226-2.226 2.15a1.032 1.032 0 1 1 -1.433-1.485l2.226-2.15-2.15-2.226a1.032 1.032 0 1 1 1.485-1.433l2.15 2.226 2.226-2.15a1.032 1.032 0 1 1 1.433 1.485l-2.226 2.15z" fill-rule="evenodd"></path>
+                </svg>
+            </h3>
+            <div class="flex-container">
+                <div><a href="https://harmash.com/tutorials/programming"><div>أساسيات البرمجة</div></a></div>
+                <div><a href="https://harmash.com/tutorials/sql"><div>قواعد البيانات</div></a></div>
+                <div><a href="https://harmash.com/tutorials/html"><div>لغة HTML</div></a></div>
+                <div><a href="https://harmash.com/tutorials/css"><div>لغة CSS</div></a></div>
+                <div><a href="https://harmash.com/tutorials/javascript"><div>لغة JavaScript</div></a></div>
+                <div><a href="https://harmash.com/tutorials/python"><div>لغة Python</div></a></div>
+                <div><a href="https://harmash.com/tutorials/cplusplus"><div>لغة ++C</div></a></div>
+                <div><a href="https://harmash.com/tutorials/java"><div>لغة Java</div></a></div>
+                <div><a href="https://harmash.com/tutorials/javafx"><div>الإطار JavaFX</div></a></div>
+                <div><a href="https://harmash.com/tutorials/swing"><div>الإطار Swing</div></a></div>
+                <div><a href="https://harmash.com/tutorials/computer-fundamentals"><div>أساسيات الحاسوب</div></a></div>
+                <div><a href="https://harmash.com/tutorials/english"><div>اللغة الإنجليزية</div></a></div>
+                <div><a href="https://harmash.com/tutorials/english-conversations"><div>التحدث بالإنجليزية</div></a></div>
+                <div><a href="https://harmash.com/tutorials/algorithms-and-data-structure"><div>تحديات برمجية</div></a></div>
+                <div><a href="https://harmash.com/learn-typing"><div>الكتابة على الكيبورد</div></a></div>
+            </div>
+            <h3>أدوات مساعدة</h3>
+            <div class="flex-container">
+                <div><a href="https://harmash.com/typing-test"><div>إختبر سرعتك في الكتابة</div></a></div>
+                <div><a href="https://harmash.com/algo-editor"><div>محرر أساسيات البرمجة</div></a></div>
+                <div><a href="https://harmash.com/tryit"><div>محرر الويب</div></a></div>
+                <div><a href="https://harmash.com/color-picker"><div>أداة إختيار الألوان</div></a></div>
+                <div><a href="https://harmash.com/css-clip-path-maker"><div>أداة رسم الأشكال بواسطة CSS</div></a></div>
+                <div><a href="https://harmash.com/units-converter"><div>محول الوحدات</div></a></div>
+                <div><a href="https://harmash.com/ip-analyzer"><div>محلل عناوين الشبكات</div></a></div>
+                <div><a href="https://harmash.com/svg-to-code"><div>تحويل SVG إلى XML</div></a></div>
+                <div><a href="https://harmash.com/quran"><div>القرآن الكريم و الأذكار</div></a></div>
+            </div>
+        </div></div>
+
+            <div class="grid">
+                <a class="" href="https://harmash.com/posts">
+                    <svg width="16" height="16" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" role="img" class="iconify iconify--whh" preserveAspectRatio="xMidYMid meet" viewBox="0 0 1024 1024" style="transform: rotate(360deg);">
+                        <path fill="white" d="M704 1024H320q-87 0-160.5-43T43 864.5T0 704V320q0-87 43-160.5T159.5 43T320 0h192q87 0 160.5 43T789 159.5T832 320q0 26 18.5 45t45.5 19h64q26 0 45 18.5t19 45.5v256q0 87-43 160.5T864.5 981T704 1024zM512 256H320q-27 0-45.5 18.5t-18.5 45t18.5 45.5t45.5 19h192q27 0 45.5-19t18.5-45.5t-19-45t-45-18.5zm192 384H320q-27 0-45.5 18.5t-18.5 45t18.5 45.5t45.5 19h384q26 0 45-19t19-45.5t-19-45t-45-18.5z"></path>
+                    </svg>
+                    مقالات
+                </a>
+                <a class="" href="https://harmash.com/books">
+                    <svg width="16" height="16" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
+                        <path fill="white" d="m448 360v-336c0-13.3-10.7-24-24-24h-328c-53 0-96 43-96 96v320c0 53 43 96 96 96h328c13.3 0 24-10.7 24-24v-16c0-7.5-3.5-14.3-8.9-18.7-4.2-15.4-4.2-59.3 0-74.7 5.4-4.3 8.9-11.1 8.9-18.6zm-320-226c0-3.3 2.7-6 6-6h212c3.3 0 6 2.7 6 6v20c0 3.3-2.7 6-6 6h-212c-3.3 0-6-2.7-6-6zm0 64c0-3.3 2.7-6 6-6h212c3.3 0 6 2.7 6 6v20c0 3.3-2.7 6-6 6h-212c-3.3 0-6-2.7-6-6zm253.4 250h-285.4c-17.7 0-32-14.3-32-32 0-17.6 14.4-32 32-32h285.4c-1.9 17.1-1.9 46.9 0 64z"></path>
+                    </svg> كتب
+                </a>
+                <a class="" href="https://harmash.com/projects">
+                    <svg width="18" height="18" viewBox="0 0 640 512" xmlns="http://www.w3.org/2000/svg">
+                        <path fill="white" d="m255.03 261.65c6.25 6.25 16.38 6.25 22.63 0l11.31-11.31c6.25-6.25 6.25-16.38 0-22.63l-35.72-35.71 35.71-35.72c6.25-6.25 6.25-16.38 0-22.63l-11.31-11.31c-6.25-6.25-16.38-6.25-22.63 0l-58.34 58.34c-6.25 6.25-6.25 16.38 0 22.63zm96.01-11.3 11.31 11.31c6.25 6.25 16.38 6.25 22.63 0l58.34-58.34c6.25-6.25 6.25-16.38 0-22.63l-58.34-58.34c-6.25-6.25-16.38-6.25-22.63 0l-11.31 11.31c-6.25 6.25-6.25 16.38 0 22.63l35.71 35.71-35.71 35.72c-6.25 6.25-6.25 16.38 0 22.63zm272.96 165.65h-242.46c-.74 19.81-14.71 32-32.74 32h-60.8c-18.69 0-33.02-17.47-32.77-32h-239.23c-8.8 0-16 7.2-16 16v16c0 35.2 28.8 64 64 64h512c35.2 0 64-28.8 64-64v-16c0-8.8-7.2-16-16-16zm-48-368c0-26.4-21.6-48-48-48h-416c-26.4 0-48 21.6-48 48v336h512zm-64 272h-384v-256h384z"></path>
+                    </svg> مشاريع
+                </a>
+                <a class="" href="https://harmash.com/questions">
+                    <svg width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000">
+                        <path fill="white" d="M287 435q-42 0-74.5 18.5t-51 52.5-18.5 77 18.5 76.5 51.5 52 74 18.5q38 0 67-15l-92-92h74l60 59q16-18 24-39 11-26 11-60 0-43-18.5-77T361 453.5 287 435zm590-328h-57q-10 0-19.5-5T786 89l-39-72q-6-8-14.5-12.5t-18-4.5T696 4.5 682 17l-39 72q-6 8-15 13t-19 5h-58q-33 0-61 16.5t-44.5 45T429 230v56H123q-34 0-62 16.5T16.5 347 0 408v362q0 33 16.5 61.5t44.5 45 62 16.5h69q11 0 20 5t15 13l26 72q6 8 14.5 12.5t18.5 4.5 18.5-4.5T318 983l27-72q6-8 15-13t19-5h70q33 0 61-16.5t44.5-45T572 770v-56h305q34 0 62-16.5t44.5-44.5 16.5-61V230q0-33-16.5-61.5t-44.5-45-62-16.5zM426 786l-29-30q-46 30-110 30-58 0-104.5-26.5t-73-73T83 583t26.5-103.5 73-73.5 104-27T391 406t73.5 73.5T491 583q0 82-54 140l63 63h-74zm503-194q0 21-15.5 36T877 643H571v-52h14l42-94h168l41 94h64L715 177 571 482v-74q0-35-19-65.5T500 297v-67q0-21 15-36t36-15h70q22 0 34.5-7t20.5-21q6-9 14-31 7-18 11-26.5t13.5-8.5 12.5 8l10 27q10 28 15 36 8 13 19.5 18t36.5 5h69q21 0 36.5 15t15.5 36v362zM652 440l60-132 59 132H652z"></path>
+                    </svg> أسئلة
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="search_box" class="sticky-menu">
+        <div>
+            <h3>إبحث
+                <svg style="float:left;" closemenu="search" height="40" viewBox="0 0 16 16" width="40" xmlns="http://www.w3.org/2000/svg">
+                    <path fill="#fff4a3" d="m9.459 8.025 2.15 2.227a1.032 1.032 0 1 1 -1.485 1.433l-2.15-2.226-2.226 2.15a1.032 1.032 0 1 1 -1.433-1.485l2.226-2.15-2.15-2.226a1.032 1.032 0 1 1 1.485-1.433l2.15 2.226 2.226-2.15a1.032 1.032 0 1 1 1.433 1.485l-2.226 2.15z" fill-rule="evenodd"></path>
+                </svg>
+            </h3>
+            <div class="gcse-search"></div>
+        </div>
+    </div>
+
+
+    <!-- Site Script -->
+    <script src="./تعلم الخوارزميات للمبتدئين_files/site.min.js.télécharger"></script>
+
+
+
+    
+    <!-- Custom script -->
+    <script src="./تعلم الخوارزميات للمبتدئين_files/page-content.min.js.télécharger"></script>
+    <script src="./تعلم الخوارزميات للمبتدئين_files/tutorial.min.js.télécharger"></script>
+
+
+
+
+<script src="./تعلم الخوارزميات للمبتدئين_files/DMCABadgeHelper.min.js.télécharger" async=""></script><script src="./تعلم الخوارزميات للمبتدئين_files/f(9).txt" async="" crossorigin="anonymous" data-checked-head="true"></script><script>(adsbygoogle = window.adsbygoogle || []).push({});</script><script>(adsbygoogle = window.adsbygoogle || []).push({});</script><script>(adsbygoogle = window.adsbygoogle || []).push({});</script><script>(adsbygoogle = window.adsbygoogle || []).push({});</script><ins class="adsbygoogle adsbygoogle-noablate" data-adsbygoogle-status="done" style="display: none !important;" data-ad-status="unfilled"><div id="aswift_0_host" style="border: none; height: 0px; width: 0px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block;"><iframe id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;border:0;width:undefinedpx;height:undefinedpx;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" src="./تعلم الخوارزميات للمبتدئين_files/ads(2).html" data-google-container-id="a!1" tabindex="0" title="Advertisement" aria-label="Advertisement" data-load-complete="true"></iframe></div></ins><iframe src="./تعلم الخوارزميات للمبتدئين_files/aframe.html" width="0" height="0" style="display: none;"></iframe><iframe name="googlefcPresent" style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;" src="./تعلم الخوارزميات للمبتدئين_files/saved_resource(3).html"></iframe><iframe name="__tcfapiLocator" src="./تعلم الخوارزميات للمبتدئين_files/saved_resource(4).html" style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe><iframe name="googlefcInactive" src="./تعلم الخوارزميات للمبتدئين_files/saved_resource(5).html" style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe><iframe name="googlefcLoaded" src="./تعلم الخوارزميات للمبتدئين_files/saved_resource(6).html" style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe></body><iframe id="google_esf" name="google_esf" src="./تعلم الخوارزميات للمبتدئين_files/zrt_lookup_fy2021.html" style="display: none;"></iframe><ins class="adsbygoogle adsbygoogle-noablate" data-adsbygoogle-status="done" style="display: none !important; width: 100vw !important; height: 100vh !important; inset: 0px auto auto 0px !important; clear: none !important; float: none !important; margin: 0px !important; max-height: none !important; max-width: none !important; opacity: 1 !important; overflow: visible !important; padding: 0px !important; position: fixed !important; vertical-align: baseline !important; visibility: visible !important; z-index: 2147483647 !important; background: transparent !important;" aria-hidden="true" data-ad-status="filled" data-vignette-loaded="true" tabindex="0"><div id="aswift_5_host" style="border: none !important; height: 100vh !important; width: 100vw !important; margin: 0px !important; padding: 0px !important; position: relative !important; visibility: visible !important; background-color: transparent !important; display: inline-block !important; inset: auto !important; clear: none !important; float: none !important; max-height: none !important; max-width: none !important; opacity: 1 !important; overflow: visible !important; vertical-align: baseline !important; z-index: auto !important;"><iframe id="aswift_5" name="aswift_5" style="width: 100vw !important; height: 100vh !important; inset: 0px auto auto 0px !important; position: absolute !important; clear: none !important; display: inline !important; float: none !important; margin: 0px !important; max-height: none !important; max-width: none !important; opacity: 1 !important; overflow: visible !important; padding: 0px !important; vertical-align: baseline !important; visibility: visible !important; z-index: auto !important;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="" height="" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" src="./تعلم الخوارزميات للمبتدئين_files/zrt_lookup_fy2021(1).html" data-google-container-id="a!6" tabindex="0" title="Advertisement" aria-label="Advertisement" data-google-query-id="COfc-v7goIYDFZOaJwIdfzwHZw" data-load-complete="true"></iframe></div></ins></html>
